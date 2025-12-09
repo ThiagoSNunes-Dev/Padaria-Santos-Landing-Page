@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Santos</title>   
+    <link rel="stylesheet" href="/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <script src="/script.js" defer></script>
+    </style>
+</head>
+<body>  
+    <header>
+        <h1>Padaria Santos</h1>
+        <nav>
+            <a href="/Sobre">Sobre</a>
+            <a href="/FAQ">FAQ</a>
+            <a href="/index">Home</a>
+            <button class="carrinho cart-icon" id="carrinho-icon" onclick="toggleCart()">
+                <img src="/imagens/carrinho-de-compras.png" alt="Carrinho de Compras">
+                <span id="cart-count" class="cart-count hidden">0</span>  
+            </button>
+        </nav>
+    <nav class="nav-mob">
+        <div class="container-mobile" id="container-mobile">
+        <img src="/imagens/fechar.png" alt="menu mobile" id="fechar">
+            <ul>
+                <li><a href="/FAQ">FAQ</a></li>
+                <li><a href="/Sobre">Sobre</a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a onclick="openCartFromMenu()">Carrinho</a></li>
+            </ul>
+        </div> 
+        <div class="abrir-menu" id="abrir-menu-mob">
+            <div class="cart-icon" style="position: relative; display: inline;">
+                <img src="/imagens/carrinho-de-compras.png" alt="Carrinho de Compras" id="icone-mobile-carrinho" onclick="toggleCart()">
+            </div>
+        <img src="/imagens/cardapio.png" alt="menu-mobile" id="icone-mobile">
+    </nav>
+    
+    </header>
+
+    <div class="info-produto">
+        <img id="produto-imagem" src="" alt="">
+        <div class="texto-apresentacao">
+            <h2 id="produto-nome"></h2>
+            <p id="produto-descricao"></p>
+            <p id="produto-preco"></p>
+            
+            <div class="container-cart-qntd">
+                <button class="add-cart" type="button" id="add-cart">Adicionar ao Carrinho</button>
+                <div class="container-cart-bnt">
+                    <button class="btn-menos" id="btn-menos">-</button>
+                    <input class="quantidade" type="number" id="qntd" min="1" value="1">
+                    <button class="btn-mais" id="btn-mais">+</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="categoria-detalhes">
+        <h2 data-categoria="Menu">Menu</h2>
+        <h2 data-categoria="Bolos">Bolos</h2>
+        <h2 data-categoria="Pães">Pães</h2>
+        <h2 data-categoria="Salgados">Salgados</h2>
+        <h2 data-categoria="Sobremesas">Sobremesas</h2>
+    </div>
+
+    <div id="produtos-filtrados" class="menu-filtrado"></div>  
+
+    <div class="lista-interativa" id="lista">
+         
+    </div>
+    <div class="overlay" onclick="toggleCart()"></div>
+
+    <footer class="container-fundo">
+        <span style="background-color: rgb(255, 255, 255); margin-top: 10px; max-width: 1920px;">&copy; Todos os direitos reservados</span>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+        
+    </script>
+    
+</body>
+</html>

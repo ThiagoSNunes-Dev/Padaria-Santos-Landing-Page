@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de medicamentos</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="SEU_CODIGO_AQUI"></script>
+</head>
+<body>
+    <aside>
+        <img src="image/fechar.png" alt="fechar" id="fechar">
+        <h2>InfoGest</h2>
+        <nav>
+            <ul>
+                <li><img src="image/medicina.png" alt="icone remedio"><a href="index.html">Listagem de medicamentos</a></li>
+                <li><img src="image/painel.png" alt="icone painel"><a href="deshboard.html">Dashboarding</a></li>
+                <li><img src="image/analise-de-dados.png" alt="icone relatorio"><a href="relatorios.html">Relatórios</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <img src="image/casa.png" alt="menu" id="menu">
+        <h1>Gerenciamento de Medicamentos</h1>
+            <div class="pesquisa">
+                <input type="text" id="input-pesquisa" placeholder="Pesquisar" onclick="">
+            </div>
+        
+        <select id="apresentacao">
+            <option value="">Forma de apresentação</option>
+            <option value="comprimido">Comprimido</option>
+            <option value="comprimido_revestido">Comprimido Revestido</option>
+            <option value="capsula">Cápsula</option>
+            <option value="ampola">Ampola</option>
+            <option value="frasco_injetavel">Frasco Injetável</option>
+            <option value="xarope">Xarope</option>
+            <option value="solucao_oral">Solução Oral</option>
+            <option value="suspensao">Suspensão</option>
+            <option value="spray_nasal">Spray Nasal</option>
+            <option value="spray_bucal">Spray Bucal</option>
+            <option value="pomada">Pomada/Bisnaga</option>
+            <option value="creme">Creme</option>
+            <option value="gel">Gel</option>
+            <option value="colirio">Colírio</option>
+            <option value="supositorio">Supositório</option>
+            <option value="implante">Implante</option>
+            <option value="adesivo_transdermico">Adesivo Transdérmico</option>
+            <option value="po_injetavel">Pó para Injeção</option>
+            <option value="solucao_inhalatoria">Solução Inalatória</option>
+        </select>
+        <select id="via">
+            <option value="">Via de administração</option>
+            <option value="oral">Oral</option>
+            <option value="intravenosa">Intravenosa</option>
+            <option value="intramuscular">Intramuscular</option>
+            <option value="subcutanea">Subcutânea</option>
+            <option value="dermatologica">Dermatológica (tópica)</option>
+            <option value="nasal">Nasal</option>
+            <option value="inalatoria">Inalatória (pulmonar)</option>
+            <option value="retal">Retal</option>
+            <option value="oftalmica">Oftálmica</option>
+            <option value="otica">Otica</option>
+            <option value="vaginal">Vaginal</option>
+            <option value="sublingual">Sublingual</option>
+            <option value="transdermica">Transdérmica</option>
+            <option value="epidural">Epidural</option>
+            <option value="intratecal">Intratecal</option>
+            <option value="intraarticular">Intra-articular</option>
+        </select>
+        <select id="controlado">
+            <option value="">Medicamento controlado?</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+        </select>
+        <img src="image/filtro-limpo.png" alt="filtro" id="filtro"><button id="btn-new" onclick="openCadastroModal()">Novo Medicamento</button>
+        <div class="container-tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome Comercial</th>
+                        <th>Princípios Ativos</th>
+                        <th>Forma</th>
+                        <th>Via</th>
+                        <th>Controlado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="medicamentos-table"></tbody>
+            </table>
+        </div>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Santos</title>   
+    <link rel="stylesheet" href="/estilo.css">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <header style= "position: sticky";>
+        <h1>Padaria Santos</h1>
+        <nav>
+            <a href="/Sobre">Sobre</a>
+            <a href="/Produtos">Produtos</a>
+            <a href="/index">Home</a>
+            <button class="carrinho cart-icon" id="carrinho-icon" onclick="toggleCart()">
+                <img src="/imagens/carrinho-de-compras.png" alt="Carrinho de Compras">
+                <span id="cart-count" class="cart-count hidden">0</span>  
+            </button>
+        </nav>
+    <nav class="nav-mob">
+        <div class="container-mobile" id="container-mobile">
+        <img src="/imagens/fechar.png" alt="menu mobile" id="fechar">
+            <ul>
+                <li><a href="/Sobre">Sobre</a></li>
+                <li><a href="/Produtos">Produtos</a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a onclick="openCartFromMenu()">Carrinho</a></li>
+            </ul>
+        </div> 
+        <div class="abrir-menu" id="abrir-menu-mob">
+            <div class="cart-icon" style="position: relative; display: inline;">
+                <img src="/imagens/carrinho-de-compras.png" alt="Carrinho de Compras" id="icone-mobile-carrinho" onclick="toggleCart()">
+            </div>
+        <img src="/imagens/cardapio.png" alt="menu-mobile" id="icone-mobile">
+    </nav>
+    
+    </header>
+    <div class="lista-interativa" id="lista"></div>
+    
+    <div class="perguntas-frequentes">
+        <h1>Perguntas frequentes</h1>
+
+        <ul class="faq">
+            <li>
+                <input type="radio" name="acordeon" id="primeira">
+                <label for="primeira"><span>1</span> Quais são os horários de funcionamento da Padaria Santos?</label>
+                <div class="respostas">
+                    <p>Estamos abertos de segunda a sábado, das 6h às 20h, e aos domingos, das 7h às 14h.</p>
+                </div>
+            </li>
+        
+            <li>
+                <input type="radio" name="acordeon" id="segunda">
+                <label for="segunda"><span>2</span> Vocês oferecem entrega de produtos?</label>
+                <div class="respostas">
+                    <p>No momento, não oferecemos entrega. Estamos trabalhando para implementar esse serviço em novembro de 2025. Enquanto isso, convidamos você a visitar nossa loja em Lote 290 - Santa Luzia, Brasília - DF!</p>
+                </div>
+            </li>
+        
+            <li>
+                <input type="radio" name="acordeon" id="terceira">
+                <label for="terceira"><span>3</span> Quais tipos de produtos vocês vendem?</label>
+                <div class="respostas">
+                    <p>Oferecemos uma variedade de pães artesanais, bolos, salgados e outros produtos frescos. Confira nosso Cardápio para mais detalhes!</p>
+                </div>
+            </li>
+        
+            <li>
+                <input type="radio" name="acordeon" id="quarta">
+                <label for="quarta"><span>4</span> Posso fazer encomendas para eventos?</label>
+                <div class="respostas">
+                    <p>Sim! Aceitamos encomendas para eventos, como festas e reuniões. Entre em contato pelo telefone (61) 9609-7153 ou e-mail padariasantosoficial@gmail.com para detalhes.</p>
+                </div>
+            </li>
+       
+            <li>
+                <input type="radio" name="acordeon" id="quinta">
+                <label for="quinta"><span>5</span> Vocês têm opções sem glúten ou veganas?</label>
+                <div class="respostas">
+                    <p>Atualmente, estamos desenvolvendo opções sem glúten e veganas. Fique de olho em nossas atualizações no site ou nas redes sociais!</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div class="overlay" onclick="toggleCart()"></div>
+    <footer class="container-fundo">
+        <span style="background-color: rgb(255, 255, 255); max-width: 1920px;">&copy; Todos os direitos reservados</span>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    exibirCarrinho();
+});
+</script>
+</body>
+</html>

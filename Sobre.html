@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Santos</title>   
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Libertinus+Keyboard&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="/script.js" defer></script>
+
+    <style> body{background-color: rgb(231, 231, 231); font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto; font-weight: weight; font-style: normal;}</style>
+</head>
+
+<body>
+    <header>
+        <h1>Padaria Santos</h1>
+        <nav>
+            <a href="/Produtos">Produtos</a>
+            <a href="/FAQ">FAQ</a>
+            <a href="/index">Home</a>
+            <button class="carrinho cart-icon" id="carrinho-icon" onclick="toggleCart()">
+                <img src="/imagens/carrinho-de-compras.png" alt="Carrinho de Compras">
+                <span id="cart-count" class="cart-count hidden">0</span>  
+            </button>
+        </nav>
+    <nav class="nav-mob">
+        <div class="container-mobile" id="container-mobile">
+        <img src="imagens/fechar.png" alt="menu mobile" id="fechar">
+            <ul>
+                <li><a href="/FAQ">FAQ</a></li>
+                <li><a href="/Produtos">Produtos</a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a onclick="openCartFromMenu()">Carrinho</a></li>
+            </ul>
+        </div> 
+        <div class="abrir-menu" id="abrir-menu-mob">
+            <div class="cart-icon" style="position: relative; display: inline;">
+                <img src="imagens/carrinho-de-compras.png" alt="Carrinho de Compras" id="icone-mobile-carrinho" onclick="toggleCart()">
+            </div>
+        <img src="imagens/cardapio.png" alt="menu-mobile" id="icone-mobile">
+    </nav>
+    
+    </header>
+    <div class="lista-interativa" id="lista"></div>
+    <!-- Conteúdo do carrinho será gerado dinamicamente -->
+
+<div class="container-sobre">
+    <section class="sobre-apresentacao">
+    <div class="texto-sobre">
+    <h1>Importante!</h1>
+
+ <br>Prezado cliente,
+    
+<p>Somos uma empresa recém-inaugurada na Estrutural, com o propósito de atender todas as suas demandas com qualidade e prontidão. Oferecemos os melhores pães da cidade! No momento, porém, ainda não temos suporte para entrega e envio de produtos. Estamos trabalhando para expandir nossos serviços e temos o prazer de informar que planejamos implementar o serviço de entrega em breve, com uma data estimada para novembro de 2025.</p>
+
+<p>Se você deseja receber atualizações sobre o lançamento do nosso serviço de entrega e outras novidades, por favor, preencha o formulário abaixo com seu nome e email, marcando a opção para receber nossas atualizações. Agradecemos sua paciência e compreensão. Estamos ansiosos para servi-lo ainda melhor no futuro próximo!</p>
+
+Padaria Santos.
+    </div>
+</section>
+</div>
+    <div class="container-form-sobre">
+    <section class="sobre-form">
+    <div class="texto-sobre2">
+    
+    <h3>Formulário para receber atualizações</h3>
+    <p>Por favor, preencha o formulário abaixo para receber atualizações:</p>
+    <div>
+        <form action="formulario.php" method="post">
+            <div class="container-input">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" maxlength="50" placeholder="Seu nome" required>
+            </div>
+            <div class="container-input">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" maxlength="75" placeholder="Nome@dominio.com" pattern=".+@.+\.com" required>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="atualizacoes" name="atualizacoes" required>
+                <label for="atualizacoes" id="label-text">Desejo receber atualizações sobre o serviço de entrega e outras novidades da Padaria Santos através do email fornecido.</label>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <p><small>Nota: Suas informações serão utilizadas apenas para enviar atualizações sobre nossos serviços e novidades, conforme sua solicitação.</small></p>
+    </div> 
+</section>
+</div>
+<div class="overlay" onclick="toggleCart()"></div>
+    <footer class="container-fundo">
+        <span style="background-color: rgb(231, 231, 231); padding-top: 50px; max-width: 1920px;">&copy; Todos os direitos reservados</span>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    exibirCarrinho();
+});
+</script>
+</body>
+</html>
